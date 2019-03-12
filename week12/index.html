@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>axios - post example</title>
+  </head>
+  <body >
+
+    <h1>axios.post</h1>
+
+    <form role="form" class="form" onsubmit="return false;">
+      <div >
+        <textarea id="data" rows="5"></textarea>
+      </div>
+      <button id="post" type="button" onclick="test()">POST</button>
+    </form>
+
+    <script src="./node_modules/axios/dist/axios.min.js"></script>
+    <script>
+      function test(){
+          var input = document.getElementById("data").value;
+          var data = {input};
+          axios.post("http://localhost:4001/test1", data).then((res) => {
+            console.log(data)
+          });
+        }
+    </script>
+  </body>
+</html>
